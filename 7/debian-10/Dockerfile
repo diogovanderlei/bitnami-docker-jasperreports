@@ -8,6 +8,7 @@ ENV HOME="/" \
 
 COPY prebuildfs /
 # Install required system packages and dependencies
+RUN apk add ttf-dejavu
 RUN install_packages acl ca-certificates curl gzip libaudit1 libc6 libcap-ng0 libcom-err2 libcurl4 libffi6 libgcc1 libgcrypt20 libgmp10 libgnutls30 libgpg-error0 libgssapi-krb5-2 libhogweed4 libicu63 libidn2-0 libjemalloc2 libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0 libldap-2.4-2 liblzma5 libncurses6 libnettle6 libnghttp2-14 libp11-kit0 libpam0g libpsl5 librtmp1 libsasl2-2 libssh2-1 libssl1.1 libstdc++6 libtasn1-6 libtinfo6 libunistring2 libxml2 procps tar xmlstarlet zlib1g
 RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "java" "1.8.302-0" --checksum 59c0b7440797c7110c76959dbbce5235359b52adf62f99218b2718c04f2d67b6
 RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "tomcat" "9.0.52-1" --checksum 68712f08805abefe3067cd796a2992156ba07313b3fcefe580eb45d1aa808260
